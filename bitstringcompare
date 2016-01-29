@@ -1,0 +1,72 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package bitstringcompare;
+
+/**
+ *
+ * @author Cody May
+ */
+public class BitStringCompare {
+    
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    public BitStringCompare(String a,String b){
+        if(a.length()==b.length()){
+        AND(a,b);
+        System.out.println("");
+        OR(a,b);
+        System.out.println("");
+        XOR(a,b);
+        }else{
+            System.out.println("Strings are different lengths");
+        }
+        
+        
+    }
+    public void AND(String a, String b){
+        for (int i = 0; i < a.length(); i++) {
+            int x= Integer.parseInt(a.substring(i, i+1));
+            int y= Integer.parseInt(b.substring(i, i+1));
+            if(x==1&&y==1){
+                System.out.print("1");
+            }else{
+                System.out.print("0");
+            }
+        }
+    }
+    public void OR(String a, String b){
+        for (int i = 0; i < a.length(); i++) {
+            int x= Integer.parseInt(a.substring(i, i+1));
+            int y= Integer.parseInt(b.substring(i, i+1));
+            if(x==1||y==1){
+                System.out.print("1");
+            }else{
+                System.out.print("0");
+            }
+        }
+    }
+    public void XOR(String a, String b){
+        for (int i = 0; i < a.length(); i++) {
+            int x= Integer.parseInt(a.substring(i, i+1));
+            int y= Integer.parseInt(b.substring(i, i+1));
+            if(x!=y){
+                System.out.print("1");
+            }else{
+                System.out.print("0");
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        String b1="101101010110011010100011001";
+        String b2="111001011001101010001110101";
+        BitStringCompare derp = new BitStringCompare(b1,b2);
+    }
+    
+}
